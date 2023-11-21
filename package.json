@@ -4,7 +4,7 @@
   "description": "A nodejs authenication system which can be used as a starter code for creating any new application",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Shriya",
