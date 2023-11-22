@@ -4,7 +4,7 @@ const path = require('path');
 const ejs = require('ejs');
 const passport = require('passport')
 const bodyParser = require('body-parser')
-const session = require('express-session')
+const session = require('cookie-session')
 const flash = require('express-flash')
 const app = express();
 
@@ -26,7 +26,7 @@ app.use(session({
     secret:  process.env.SECRET_KEY,
     resave: false,
     saveUninitialized: false,
-     cookie: { maxAge: 1000 * 60 * 60 * 24 } // 24 hour
+    cookie: { maxAge: 1000 * 60 * 60 * 24 } // 24 hour
 }))
 
 
