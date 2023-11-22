@@ -26,7 +26,7 @@ app.use(session({
     secret:  process.env.SECRET_KEY,
     resave: false,
     saveUninitialized: false,
-    cookie: { maxAge: 1000 * 60 * 60 * 24 } // 24 hour
+    // cookie: { maxAge: 1000 * 60 * 60 * 24 } // 24 hour
 }))
 
 
@@ -41,7 +41,7 @@ app.use(passport.session());
 app.use(flash())
 
 
-// *************************    Assets    ****************************************//
+//    Assets   
 const publicPath = path.join(__dirname,"public");
 app.use(express.static(publicPath));
 app.use(express.static(__dirname + '/public'));
@@ -49,10 +49,10 @@ app.use( bodyParser.urlencoded({ extended: true }) );
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
-// ***********************************Routes ********************************//
+// Routes 
 require('./routes/web')(app)
 
-// ************************   Port Start   ********************************//
+//   Port Start   
 const PORT = 8000;
 app.listen(PORT,()=>{
     console.log(`My server start on this port ${PORT}`)
