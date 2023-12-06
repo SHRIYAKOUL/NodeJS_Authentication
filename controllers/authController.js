@@ -21,12 +21,12 @@ function authController() {
                     return next(err)
                 }
                 if (!user) {
-                    req.flash('error', info.message)
+                    req.flash('error', info ? info.message :'Invalid login credentials');
                     return resp.redirect('/signin')
                 }
                 req.logIn(user, (err) => {
                     if (err) {
-                        req.flash('error', info.message)
+                        req.flash('error', 'failed to log in the user')
                         return next(err)
                     }
 
