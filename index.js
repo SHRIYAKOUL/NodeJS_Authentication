@@ -4,7 +4,7 @@ const path = require('path');
 const ejs = require('ejs');
 const passport = require('passport')
 const bodyParser = require('body-parser')
-const session = require('cookie-session')
+const session = require('express-session')
 const flash = require('express-flash')
 const app = express();
 
