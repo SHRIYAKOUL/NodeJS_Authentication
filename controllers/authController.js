@@ -17,7 +17,7 @@ function authController() {
             }
             passport.authenticate('local', (err, user, info) => {
                 if (err) {
-                    req.flash('error', info.message)
+                    req.flash('error', "Something went wrong")
                     return next(err)
                 }
                 if (!user) {
